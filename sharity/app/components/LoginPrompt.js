@@ -1,4 +1,4 @@
-import "../dashboard.css";
+import "../globals.css";
 import MatchingButton from "./MatchingButton";
 
 function LoginPrompt() {

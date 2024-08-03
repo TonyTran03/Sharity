@@ -1,9 +1,10 @@
 'use client'
 
-import "./index.css";
+import "./globals.css";
 import LoginPrompt from "./components/LoginPrompt";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
+
 
 function Dashboard() {
 
