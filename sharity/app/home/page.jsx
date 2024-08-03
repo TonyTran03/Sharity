@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-        <div className="flex justify-center items-center h-full">
+        <div className="dashboard">
           <SharityLogo />
         </div>
       </div>
