@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./matching-button.css";
+import "../globals.css";
 
 
 function MatchingButton({link, full, onclick, type, children}) {
