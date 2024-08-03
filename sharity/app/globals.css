@@ -69,8 +69,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(
       to bottom left,
-      rgb(8, 26, 60),
-      rgb(109, 138, 188)
+      rgb(207, 125, 125),
+      rgb(250, 200, 200)
   );
   background-attachment: fixed;
 }
@@ -85,7 +85,7 @@ code {
 }
 
 .matching-button {
-  background-color: #99c43e;
+  background-color: #EF83AD;
   width: 40%;
   height: 50px;
   min-height: 40px;
@@ -111,3 +111,5 @@ code {
   width: 80%;
   max-width: 600px;
 }
+
+
