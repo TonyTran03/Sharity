@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(
+        to bottom left,
+        rgb(8, 26, 60),
+        rgb(109, 138, 188)
+    );
+    background-attachment: fixed;
+}
+
+button {
+    font-size: 15px;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
