@@ -1,7 +1,7 @@
-// app/api/userProfiles/route.js
 import { NextResponse } from 'next/server';
 import dbConnect from '../../../lib/dbConnect';
 import UserProfile from '../../../models/UserProfile';
+import createUser from '../../../lib/user';  // Import the create function from lib/user.js
 
 // Handle GET request
 export async function GET() {
@@ -19,8 +19,12 @@ export async function POST(request) {
   await dbConnect();
   try {
     const data = await request.json();
-    const userProfile = await UserProfile.create(data);
-    return NextResponse.json({ success: true, data: userProfile });
+    await createUser(data, (err) => {
+      if (err) {
+        return NextResponse.json({ success: false, error: err.message });
+      }
+      return NextResponse.json({ success: true, data });
+    });
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message });
   }
