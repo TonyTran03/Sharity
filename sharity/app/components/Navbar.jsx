@@ -40,6 +40,9 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+      <div>
+      <a href="/api/auth/logout">Logout</a>
+      </div>
     </div>
   );
 };
