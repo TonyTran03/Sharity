@@ -11,7 +11,7 @@ function Dashboard() {
   const router = useRouter();
 
   if (loading) return <h1>Loading...</h1>
-  if (error) return <h1>Error with auth</h1>
+  if (error) return <h1>{error.message}</h1>
 
   if (user) router.push("home");
 
