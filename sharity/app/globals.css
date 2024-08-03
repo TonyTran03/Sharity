@@ -25,10 +25,12 @@
 
 .dashboard {
   display: flex;
+  background-color: white;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+
 
 .signup-prompt {
   background-color: white;
@@ -75,8 +77,20 @@ body {
   background-attachment: fixed;
 }
 
-button {
-  font-size: 15px;
+.button {
+  background-color: #ADD8E6; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 40px; /* Some padding */
+  color: black;
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline element */
+  font-size: 16px; /* Increase font size */
+  margin: 20px 20px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon on hover */
+  border-radius: 12px; /* Rounded corners */
+  transition-duration: 0.4s; /* 0.4 seconds transition effect to hover state */
 }
 
 code {

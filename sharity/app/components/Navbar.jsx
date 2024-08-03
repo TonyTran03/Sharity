@@ -1,48 +1,22 @@
 import React from 'react';
+import MatchingButton from './MatchingButton';
+import "../globals.css";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100">
-      <div className="flex-none">
-        <button className="btn btn-square btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block h-5 w-5 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+    <div className="relative">
+      <div className="navbar bg-base-100 flex items-center p-10">
+        <div className="flex-1 flex justify-center space-x-10">
+          <button className="button">Profile</button>
+          <button className="button">Charity Map 🗺️</button>
+          <button className="button">Charity Search 🔎</button>
+          <div className="fixed top-10 right-1000 flex justify-center space-x-10 z-50">
+        <MatchingButton link="/api/auth/logout">Logout</MatchingButton>
+        </div>
+        
       </div>
-      <div className="flex-1">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
-      <div className="flex-none">
-        <button className="btn btn-square btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block h-5 w-5 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <div>
-      <a href="/api/auth/logout">Logout</a>
-      </div>
+      
     </div>
   );
 };
