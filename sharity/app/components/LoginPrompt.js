@@ -3,9 +3,13 @@ import MatchingButton from "./MatchingButton";
 
 function LoginPrompt() {
   return (
-    <div className="m-4 w-full signup-prompt bg-pink-500">
-      <h3>Sign up or log in to get started.</h3>
-      <MatchingButton link="/api/auth/login">Login</MatchingButton>     
+    <div style={{ width: '100%', height: '35vh', backgroundColor: '#fbbfbc' }} className="flex items-center justify-center">
+      <div className="text-center">
+
+      <br />
+      <h1 style={{ fontSize: '2rem' }}>Sign up or log in to get started!</h1>
+      <MatchingButton link="/api/auth/login">Login</MatchingButton>
+      </div>     
     </div>
   )
 }

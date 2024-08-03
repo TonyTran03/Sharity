@@ -40,6 +40,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 form {
@@ -84,6 +85,15 @@ code {
       monospace;
 }
 
+h1 {
+  color: #000000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s;
+}
+  
 .matching-button {
   background-color: #EF83AD;
   width: 40%;
@@ -97,19 +107,22 @@ code {
   align-items: center;
   justify-content: center;
   transition: all 0.1s;
-  margin: 30px;
+  margin: 30px auto;
   border: none;
   cursor: pointer;
   max-width: 200px;
 }
 
 .matching-button:hover {
-  background-color: #73932e;
+  background-color: #f0a6c6;
 }
 
 .matching-button-full {
   width: 80%;
   max-width: 600px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 
