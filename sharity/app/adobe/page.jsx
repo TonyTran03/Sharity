@@ -15,8 +15,8 @@ const Home = () => {
             document.addEventListener("adobe_dc_view_sdk.ready", function () { 
                 const adobeDCView = new AdobeDC.View({ clientId: "a6881fc0aa2749b888d30a5ff3a5baf4", divId: "adobe-dc-view" });
                 adobeDCView.previewFile({
-                    content: { location: { url: "https://acrobatservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf" } },
-                    metaData: { fileName: "Bodea Brochure.pdf" }
+                    content: { location: { url: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a26a0f72-e63e-4de7-a1fc-cb280961ebdc" } },
+                    metaData: { fileName: "Get Started With Sharity Tutorial.pdf" }
                 }, {});
             });
         };
