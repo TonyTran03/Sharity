@@ -18,7 +18,8 @@ function Dashboard() {
   if (loading) return <h1>Loading...</h1>
   if (error) return <h1>{error.message}</h1>
 
-  if (user) router.push("home");
+  if (user) router.push("adobe");
+
 
   return (
     <div className="w-full dashboard">
@@ -26,7 +27,7 @@ function Dashboard() {
         <link rel="icon" href={favico} />
       </Head>
       <SharityLogo />
-      {/* <LoginPrompt /> */}
+      <LoginPrompt />
 
     </div>
   );
