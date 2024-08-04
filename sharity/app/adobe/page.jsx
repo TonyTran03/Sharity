@@ -26,7 +26,7 @@ const Home = () => {
         viewerScript.onload = () => {
             console.log('Adobe PDF Embed API script loaded');
             document.addEventListener("adobe_dc_view_sdk.ready", function () {
-                const dropboxLink = "https://github.com/TonyTran03/Sharity/blob/c43404ba8eeb5ed82f7240ea8fab141801ba0b12/sharity/app/adobe/Sharity.pdf";
+                const dropboxLink = "https://raw.githubusercontent.com/TonyTran03/Sharity/main/sharity/app/adobe/Sharity.pdf";
                 const clientId = "6fb9e788841849f6b5262009f2578272";
                 const viewerOptions = {
                     embedMode: "FULL_WINDOW",
