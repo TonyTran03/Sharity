@@ -16,9 +16,14 @@ const Navbar = () => {
           Profile <FontAwesomeIcon icon={faUser} className="icon-small" />
         </NavBarButton>
 
-        <NavBarButton link="/map">
-          Charity Map <FontAwesomeIcon icon={faMap} className="icon-small" />
+        <NavBarButton>
+        <a href="https://maps-lilac.vercel.app/" target="_blank" className="nav-bar-button">
+  Charity Map <FontAwesomeIcon icon={faMap} className="icon-small" />
+</a>
+
+
         </NavBarButton>
+
 
         {isCharityProfileVisible && (
           <NavBarButton link="/charityProfile">
