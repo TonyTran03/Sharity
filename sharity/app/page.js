@@ -26,7 +26,7 @@ function Dashboard() {
         <link rel="icon" href={favico} />
       </Head>
       <SharityLogo />
-      <LoginPrompt />
+      {/* <LoginPrompt /> */}
 
     </div>
   );
