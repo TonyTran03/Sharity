@@ -2,7 +2,10 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
+import "../globals.css";
 import MatchingButton from '../components/MatchingButton';
+import Navbar from "../components/Navbar";
+
 
 const Home = () => {
     const router = useRouter();
@@ -37,7 +40,9 @@ const Home = () => {
     };
 
     return (
-        <div>
+        <div className = "full-height">
+            <Navbar />
+            <br />
             <Head>
                 <title>Embedded PDF Document</title>
             </Head>
