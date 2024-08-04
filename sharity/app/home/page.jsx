@@ -7,19 +7,24 @@ function SharityLogo() {
 }
 
 export function BulletPointList() {
+  const bulletPointStyle = {
+    marginBottom: '20px',
+    paddingLeft: '10px',
+    fontSize: '18px',
+  };
 
   return (
     <div>
       <ul style={{ listStyleType: 'disc', paddingLeft: '30px' }}>
-      <li style={{ marginBottom: '10px', paddingLeft: '10px' }}>
+      <li style={bulletPointStyle}>
         <span style={{ fontWeight: 'bold', color: '#c77593' }}>Live Map:</span> see what donations charities need
       </li>
 
-        <li style={{ marginBottom: '10px' , padding: '10px'}}>
+        <li style={bulletPointStyle}>
           <span style={{ fontWeight: 'bold', color: '#c77593' }}>Track</span> your donations
         </li>
 
-        <li style={{ marginBottom: '10px', padding: '10px'}}>
+        <li style={bulletPointStyle}>
           <span style={{ fontWeight: 'bold', color: '#c77593' }}>Optimize Resources:</span> charities can see each other's stocks, helping them work better together</li>
       </ul>
     </div>
@@ -32,8 +37,8 @@ export default function Home() {
       <Navbar />
         <div className="side-by-side">
           <SharityLogo />
-          <div className="rectangle" style={{width: '400px', height: '400px'}}>
-          <h1 style={{ fontSize: '20px', marginBottom: '20px', paddingTop:'50px', fontWeight:'bold',  color: '#c77593', padding: '20px'}}>Connecting charities and communities to streamline donations</h1>
+          <div className="rectangle" style={{width: '500px', height: '345px'}}>
+          <h1 style={{ fontSize: '20px', marginBottom: '20px', paddingTop: '60px', fontWeight:'bold',  color: '#a6496b', padding: '20px'}}>Connecting charities and communities to streamline donations</h1>
           <BulletPointList/>
           </div>
         </div>

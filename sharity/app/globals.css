@@ -24,6 +24,52 @@
   }
 }
 
+.slider-container {
+  position: relative;
+  width: 100%; /* full width of parent container (rectangle)*/
+  max-width: 400px; /* match slider's width*/
+  margin: 0 auto; /* center container */
+}
+
+.tick-container {
+  position: absolute;
+  width: 100%; /* full width of parent */
+  height: 20px; 
+  top: 100%; /* position directly below the slider */
+  left: 0;
+  display: flex;
+  justify-content: space-between; /* distribute ticks evenly */
+}
+
+input[type="range"].range-primary {
+  width: 400px; 
+  height: 20px; 
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    red, /* Start color */
+    yellow, /* Middle color */
+    green /* End color */
+  );
+}
+
+input[type="range"].range-primary::-webkit-slider-thumb {
+  appearance: none;
+  width: 27px; /* Adjust the width of the slider handle */
+  height: 27px; /* Adjust the height of the slider handle */
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+
+.tick {
+  width: 1px; 
+  height: 10px; 
+  background: black; 
+}
+
 .navbar {
   background-color: #CF7D7D;
   color: white;
@@ -47,6 +93,13 @@
 
 
 .dashboard {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -85,6 +138,8 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+
 
 .full-height {
   display: flex;
