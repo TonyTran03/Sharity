@@ -176,7 +176,6 @@ h1 {
   align-items: center;
   justify-content: center;
   transition: all 0.1s;
-  margin: 30px auto;
   border: none;
   cursor: pointer;
 }

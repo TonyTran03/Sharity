@@ -7,11 +7,12 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
     <div className="relative">
+      <div className="navbar">
       <NavBarButton link="/profile">Profile</NavBarButton>
       <NavBarButton link="/map">Charity Map 🗺️</NavBarButton>
       <NavBarButton link = "/search">Charity Search 🔎</NavBarButton>
-      <MatchingButton link="/api/auth/logout">Logout</MatchingButton>
-    </div>
+      <NavBarButton link="/api/auth/logout">Logout</NavBarButton>
+    </div> </div>
   );
 };
 
