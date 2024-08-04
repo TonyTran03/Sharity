@@ -10,8 +10,11 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-        <div className="dashboard">
+        <div className="side-by-side">
           <SharityLogo />
+          <div className="rectangle" style={{width: '400px', height: '400px'}}>
+          <h1 style={{ fontSize: '20px', marginBottom: '20px', paddingTop:'60px', fontWeight:'bold'}}>Connecting charities and communities</h1>
+          </div>
         </div>
       </div>
 

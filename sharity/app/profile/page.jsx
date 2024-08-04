@@ -20,6 +20,7 @@ function Button() {
   )
 }
 
+// need to pass in objects
 export function Info({s1, s2, s3}) {
   return (
   <div style={{ display: 'flex', alignItems: 'center' }}>
