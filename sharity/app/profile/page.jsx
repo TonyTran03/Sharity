@@ -14,33 +14,45 @@ function Rectangle() {
   );
 };
 
+function Button() {
+  return (
+    <button className="navbar-button" style={{fontSize: '1rem', fontWeight: 'bold'}}>Receipt</button>
+  )
+}
+
+export function Info({s1, s2, s3}) {
+  return (
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+        <h1 style={{margin: '50px 50px 0', fontWeight: 'bold'}}>{s1}</h1>
+        <h1 style={{margin: '50px 50px 0', fontWeight: 'bold'}}>{s2}</h1>
+        <h1 style={{margin: '50px 50px 0', fontWeight: 'bold'}}>{s3}</h1>
+  </div>
+  )
+}
+
 function Profile() {
   return (
     <div>
       <Navbar/>
       <div className="dashboard p-4">
-      <h1 style={{ fontSize: '2rem', marginBottom: '20px', paddingTop:'30px'}}>Hi there, view your donations here</h1>
+      <h1 style={{ fontSize: '2rem', marginBottom: '20px', paddingTop:'30px'}}>Hi _______, view your donations here</h1>
       <div className="rectangle">
-
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <h1 style={{margin: '50px 50px 0', fontWeight: 'bold'}}>Date</h1>
-        <h1 style={{margin: '50px 50px 0', fontWeight: 'bold'}}>Charity</h1>
-        <h1 style={{margin: '50px 50px 0', fontWeight: 'bold'}}>Amount</h1>
+      
+      <div>
+        <Info s1="Date" s2 = "Charity" s3="Donation"/>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <h1 style={{ margin: '20px 20px 0' , paddingLeft:'15px'}}>July 1, 2024</h1>
-        <h1 style={{ margin: '20px 30px 0' }}>Salvation Army</h1>
-        <h1 style={{ margin: '20px 50px 0' }}>$100.00</h1>
+      <div>
+        <Info s1="July 1, 2024" s2 = "Salvation Army" s3="$100.00"/>
       </div>
-        <button className="navbar-button" style={{fontSize: '1rem', fontWeight: 'bold'}}>Receipt</button>
 
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <h1 style={{ margin: '20px 10px 0' , paddingLeft:'15px'}}>Aug 1, 2024</h1>
-        <h1 style={{ margin: '20px 30px 0' }}>Canadian Red Cross</h1>
-        <h1 style={{ margin: '20px 50px 0' }}>$100.00</h1>
+      <Button/>
+
+      <div>
+        <Info s1="Aug 1, 2024" s2 = "Canadian Red Cross" s3="1 kg canned food"/>
       </div>
-      <button className="navbar-button" style={{fontSize: '1rem', fontWeight: 'bold'}}>Receipt</button>
+
+      <Button/>
 
       </div>
       </div>
