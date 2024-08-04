@@ -25,7 +25,7 @@ export function BulletPointList() {
         </li>
 
         <li style={bulletPointStyle}>
-          <span style={{ fontWeight: 'bold', color: '#c77593' }}>Optimize Resources:</span> charities can see each other's stocks, helping them work better together</li>
+          <span style={{ fontWeight: 'bold', color: '#c77593' }}>Optimize Resources:</span> charities can see each other's resources, helping them work better together</li>
       </ul>
     </div>
   );

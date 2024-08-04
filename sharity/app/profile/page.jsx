@@ -35,7 +35,7 @@ function Profile() {
   return (
     <div className = "full-height">
       <Navbar/>
-      <div className="dashboard p-4">
+      <div className="dashboard">
       <h1 style={{ fontSize: '2rem', marginBottom: '20px', paddingTop:'30px'}}>Hi _______, view your donations here</h1>
       <div className="rectangle">
       
@@ -47,13 +47,18 @@ function Profile() {
         <Info s1="July 1, 2024" s2 = "Salvation Army" s3="$100.00"/>
       </div>
 
-      <Button/>
+      <div className="dashboard">
+        <Button/>
+      </div>
+      
 
       <div>
         <Info s1="Aug 1, 2024" s2 = "Canadian Red Cross" s3="1 kg canned food"/>
       </div>
 
-      <Button/>
+      <div className="dashboard">
+        <Button/>
+      </div>
 
       </div>
       </div>
