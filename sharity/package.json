@@ -16,6 +16,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "axios": "^1.7.3",
+    "faker": "^6.6.6",
     "mongodb": "^6.8.0",
     "next": "14.2.5",
     "react": "^18",

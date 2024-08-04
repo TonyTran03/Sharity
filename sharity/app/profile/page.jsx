@@ -7,6 +7,8 @@ function SharityLogo() {
 }
 
 function Rectangle() {
+
+
   return (
     <div className = "dashboard">
       <div className = "rectangle"></div>
