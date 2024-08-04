@@ -27,7 +27,7 @@ const Home = () => {
             console.log('Adobe PDF Embed API script loaded');
             document.addEventListener("adobe_dc_view_sdk.ready", function () {
                 const dropboxLink = "https://www.dropbox.com/scl/fi/x0fgm0wk2vgxa0xnipama/Sharity.pdf?rlkey=d8iobc9m1u7vdpj0i7vnidhvj&st=9hd1lb0s&dl=0";
-                const clientId = "e800d12fc12c4d60960778b2bc4370af";
+                const clientId = "a6881fc0aa2749b888d30a5ff3a5baf4";
                 const viewerOptions = {
                     embedMode: "FULL_WINDOW",
                     defaultViewMode: "FIT_PAGE",
