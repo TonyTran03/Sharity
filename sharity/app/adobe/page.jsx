@@ -1,8 +1,12 @@
 'use client'
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Head from 'next/head';
+import MatchingButton from '../components/MatchingButton';
 
 const Home = () => {
+    const router = useRouter();
+
     useEffect(() => {
         // Load the Adobe PDF Embed API script dynamically
         const script = document.createElement('script');
@@ -27,12 +31,19 @@ const Home = () => {
         };
     }, []);
 
+    const handleButtonClick = () => {
+        // Redirect to the next screen
+        router.push('/next-screen'); // Replace with your actual route
+    };
+
     return (
         <div>
             <Head>
                 <title>Embedded PDF Document</title>
             </Head>
-            <div id="adobe-dc-view" style={{ height: '100vh' }}></div>
+            <div id="adobe-dc-view" style={{ height: '600px', width: '80%', margin: '0 auto' }}></div>
+            
+            <MatchingButton link="/home">Got it!</MatchingButton>
         </div>
     );
 };
