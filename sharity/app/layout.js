@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { UserProvider } from '@auth0/nextjs-auth0';
+import Auth0ProviderWithHistory from './auth0-provider-with-history';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,9 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <UserProvider>
-        <body>{children}</body>
-      </UserProvider>
+      
+        <body><Auth0ProviderWithHistory>{children} </Auth0ProviderWithHistory></body>
+      
     </html>
   );
 }

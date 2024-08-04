@@ -1,27 +1,16 @@
-import Image from "next/image";
-import '../globals.css';
-import Navbar from "../components/Navbar";
+// app/profile/page.js
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-function SharityLogo() {
-  return <img src={"Sharity.png"} alt="Sharity Logo" />;
-}
-
-function Profile() {
+const Profile = ({ user }) => {
   return (
     <div>
-      <Navbar/>
-      <div className="p-4 text-center">
-        <h1>Hi There,</h1>
-      </div>
-      {/* <Navbar />
-      <div className="p-4 text-right">
-        <h1>Hi There,</h1>
-      </div>
-      <div className="flex justify-center p-4">
-        <SharityLogo />
-      </div> */}
+      <img src={user.picture} alt={user.name} />
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
     </div>
   );
-}
+};
+
+export const getServerSideProps = withPageAuthRequired();
 
 export default Profile;
