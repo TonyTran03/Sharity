@@ -33,7 +33,7 @@ export function Info({s1, s2, s3}) {
 
 function Profile() {
   return (
-    <div>
+    <div className = "full-height">
       <Navbar/>
       <div className="dashboard p-4">
       <h1 style={{ fontSize: '2rem', marginBottom: '20px', paddingTop:'30px'}}>Hi _______, view your donations here</h1>
