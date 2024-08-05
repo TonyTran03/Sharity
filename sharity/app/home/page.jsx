@@ -1,7 +1,7 @@
 "use client"
 import React, { useContext, useEffect } from 'react';
 import Navbar from "../components/Navbar";
-import { GlobalContext } from '../context/GlobalContext.js';
+
 import '../globals.css';
 
 function SharityLogo() {
@@ -33,7 +33,6 @@ export function BulletPointList() {
 }
 
 export default function Home() {
-  const { updateVisibility } = useContext(GlobalContext);
 
   useEffect(() => {
     const storedValue = localStorage.getItem('isCharityProfileVisible');

@@ -6,6 +6,7 @@ import "../globals.css";
 import MatchingButton from '../components/MatchingButton';
 import Navbar from "../components/Navbar";
 
+
 const Home = () => {
     const router = useRouter();
 
@@ -27,7 +28,7 @@ const Home = () => {
             console.log('Adobe PDF Embed API script loaded');
             document.addEventListener("adobe_dc_view_sdk.ready", function () {
                 const dropboxLink = "https://raw.githubusercontent.com/TonyTran03/Sharity/main/sharity/app/adobe/Sharity.pdf";
-                const clientId = "ef68cd85c8174c9295b93558191ba53e";
+                const clientId = "ca84f1d214e845729da50745ecea6737";
                 const viewerOptions = {
                     embedMode: "FULL_WINDOW",
                     defaultViewMode: "FIT_PAGE",
@@ -115,6 +116,8 @@ const Home = () => {
             </Head>
             <div id="embeddedView" style={{ height: '600px', width: '80%', margin: '0 auto' }}></div>
             
+
+           
             <MatchingButton link="/home">Got it!</MatchingButton>
         </div>
     );

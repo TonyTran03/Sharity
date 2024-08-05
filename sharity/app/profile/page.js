@@ -1,6 +1,12 @@
+"use client"
 import Image from "next/image";
 import '../globals.css';
 import Navbar from "../components/Navbar";
+import { useUser } from '@auth0/nextjs-auth0/client'
+import UserName from "@/components/UserName";
+import DonationBox from "@/components/DonationBox.js";
+
+
 
 function SharityLogo() {
   return <img src={"Sharity.png"} alt="Sharity Logo" />;
@@ -32,11 +38,19 @@ export function Info({s1, s2, s3}) {
 }
 
 function Profile() {
+
+
+  const {user, error} = useUser();
+  if(error) return <div>{error.message}</div>;
+
   return (
     <div className = "full-height">
+
+      
       <Navbar/>
+      <DonationBox/>
       <div className="dashboard">
-      <h1 style={{ fontSize: '2rem', marginBottom: '20px', paddingTop:'30px'}}>Hi _______, view your donations here</h1>
+    
       <div className="rectangle">
       
       <div>

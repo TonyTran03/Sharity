@@ -7,10 +7,18 @@ import { useRouter } from "next/navigation";
 import Head from 'next/head';
 import favico from "./favicon.ico";
 
+import {createContext, useContext, useState, useEffect} from 'react';
+
+
 function SharityLogo() {
   return <img src={"Sharity.png"} alt="Sharity Logo" />;
 }
 function Dashboard() {
+
+  const handleClick = () => {
+      
+
+  }
 
   const { user, error, loading } = useUser();
   const router = useRouter();
@@ -18,7 +26,9 @@ function Dashboard() {
   if (loading) return <h1>Loading...</h1>
   if (error) return <h1>{error.message}</h1>
 
-  if (user) router.push("adobe");
+  if (user){
+    router.push("adobe");
+  } 
 
 
   return (

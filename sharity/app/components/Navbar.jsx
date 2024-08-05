@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import NavBarButton from './NavBarButton';
 import "../globals.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faMap, faSearch, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { GlobalContext } from '../context/GlobalContext';
+import { faUser, faMap, faSearch, faSignOutAlt, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+
 
 
 const Navbar = () => {
-  const { isCharityProfileVisible } = useContext(GlobalContext);
 
   return (
     <div className="relative">
@@ -25,11 +25,14 @@ const Navbar = () => {
         </NavBarButton>
 
 
-        {isCharityProfileVisible && (
+        
           <NavBarButton link="/charityProfile">
             Charity Profile <FontAwesomeIcon icon={faSearch} className="icon-small" />
           </NavBarButton>
-        )}
+        
+          <NavBarButton link="/donate">
+          add donation <FontAwesomeIcon icon={faHeart} className="icon-small" />
+          </NavBarButton>
 
         <NavBarButton link="/api/auth/logout">
           Logout <FontAwesomeIcon icon={faSignOutAlt} className="icon-small" />

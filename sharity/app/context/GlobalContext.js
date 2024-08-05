@@ -1,7 +1,7 @@
 "use client"
 import React, { createContext, useState, useEffect } from 'react';
 
-export const GlobalContext = createContext();
+
 
 export const GlobalProvider = ({ children }) => {
   const [isCharityProfileVisible, setIsCharityProfileVisible] = useState(false);
@@ -19,8 +19,7 @@ export const GlobalProvider = ({ children }) => {
   };
 
   return (
-    <GlobalContext.Provider value={{ isCharityProfileVisible, updateVisibility }}>
       {children}
-    </GlobalContext.Provider>
+  
   );
 };
