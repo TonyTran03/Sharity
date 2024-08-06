@@ -18,12 +18,11 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import MenuItem from '@mui/material/MenuItem';
 import Checkbox from '@mui/material/Checkbox';
 import ListItemText from '@mui/material/ListItemText';
+import Grid from '@mui/material/Grid';
 
+import NewEntry from "../components/NewEntry.jsx";
 export default function DonationBox() {
-  const [date, setDate] = useState([]);
-  const [charity, setCharity] = useState([]);
-  const [amount, setAmount] = useState(0);
-  const [items, setItems] = useState([]);
+
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
   const MenuProps = {
@@ -38,7 +37,12 @@ export default function DonationBox() {
 
   const clothesOptions = ["Shirt", "Hat", "Pants", "Shoes", "Jacket"];
   const furnitureOptions = ["Table", "Chair", "Sofa", "Bed", "Cabinet"];
-    
+  const items = [
+    { name: "Adidas NMD R1 OG", price: "$ 349.00" },
+    { name: "LV Porte-Documents Jour", price: "$ 1,650.00" },
+    { name: "Another Item", price: "$ 199.00" },{ name: "Another Item", price: "$ 199.00" }
+    // Add more items as needed
+  ];
   const [selectedType, setSelectedType] = useState('Clothing'); // Initialize with 'clothing'
   function handleTypeChange (type){
     setSelectedType(type);
@@ -66,15 +70,18 @@ export default function DonationBox() {
     const {
       target: { value },
     } = event;
-    setArticle(
+    setFurniture(
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
     );
   };
 
 
-
-
+  const [submit, setSubmit] = useState(false);
+  function handleSubmit(event){
+    event.preventDefault();
+    setSubmit(true); // Open the popup on submit
+  }
 
 
   const {user} = useUser();  
@@ -83,7 +90,7 @@ export default function DonationBox() {
   }
   return (
 
-    <Box>
+    <Box >
       <Navbar />
       <h1 style={{ 
         all: 'unset', 
@@ -95,8 +102,9 @@ export default function DonationBox() {
         margin: '1em'
       }}>
         Donate today
+        
       </h1>
-
+      
       <Box
         sx={{
           display: 'flex',
@@ -123,7 +131,7 @@ export default function DonationBox() {
 
             
             <GetCharity selectedCharity={selectedCharity} onChange={handleCharityChange}/>
-
+            
 
             {selectedType === "Clothing" ? (
               <FormControl fullWidth>
@@ -177,13 +185,22 @@ export default function DonationBox() {
             </Select>
           </FormControl>
           )}
-
-        </Box>
-      </Box>
-
-      <Button sx={{ml: 1}} variant="contained" endIcon={<AddCircleOutlineIcon />}>
+          <Button
+            sx={{ ml: 1 }}
+            variant="contained"
+            endIcon={<AddCircleOutlineIcon />}
+            onClick={handleSubmit}
+          >
             Submit
           </Button>
+        </Box>
+
+
+
+        
+      </Box>
+
+      <NewEntry open={submit} onClose={() => setSubmit(false)} items={items} /> 
     </Box>
 
   );

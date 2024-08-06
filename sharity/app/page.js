@@ -5,9 +5,9 @@ import LoginPrompt from "./components/LoginPrompt";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
 import Head from 'next/head';
-import favico from "./favicon.ico";
 
 import {createContext, useContext, useState, useEffect} from 'react';
+import NewEntry from "./components/NewEntry";
 
 
 function SharityLogo() {
@@ -34,7 +34,8 @@ function Dashboard() {
   return (
     <div className="w-full dashboard">
       <Head> 
-        <link rel="icon" href={favico} />
+        <link rel="icon"/>
+        
       </Head>
       <SharityLogo />
       <LoginPrompt />

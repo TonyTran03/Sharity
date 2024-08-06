@@ -4,6 +4,7 @@ import '../globals.css';
 import Navbar from "../components/Navbar";
 import { useUser } from '@auth0/nextjs-auth0/client'
 import UserName from "@/components/UserName";
+import NewEntry from "@/components/NewEntry";
 
 
 
@@ -47,7 +48,7 @@ function Profile() {
 
       
       <Navbar/>
-      
+     
       <div className="dashboard">
     
       <div className="rectangle">
