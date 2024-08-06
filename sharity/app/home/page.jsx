@@ -34,13 +34,7 @@ export function BulletPointList() {
 
 export default function Home() {
 
-  useEffect(() => {
-    const storedValue = localStorage.getItem('isCharityProfileVisible');
-    if (!storedValue) {
-      const userConfirmed = window.confirm('Do you want to enable the Charity Profile?');
-      updateVisibility(userConfirmed);
-    }
-  }, []);
+
 
   return (
     <div>

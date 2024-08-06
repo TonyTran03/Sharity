@@ -4,7 +4,6 @@ import '../globals.css';
 import Navbar from "../components/Navbar";
 import { useUser } from '@auth0/nextjs-auth0/client'
 import UserName from "@/components/UserName";
-import DonationBox from "@/components/DonationBox.js";
 
 
 
@@ -48,7 +47,7 @@ function Profile() {
 
       
       <Navbar/>
-      <DonationBox/>
+      
       <div className="dashboard">
     
       <div className="rectangle">
