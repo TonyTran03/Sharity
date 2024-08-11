@@ -1,6 +1,6 @@
 "use client"
 import React, { useContext, useEffect } from 'react';
-import Navbar from "../components/Navbar";
+
 
 import '../globals.css';
 
@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
+
       <div className="side-by-side">
         <SharityLogo />
         <div className="rectangle" style={{ width: '500px', height: '345px' }}>

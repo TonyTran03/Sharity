@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import "../globals.css";
 import MatchingButton from '../components/MatchingButton';
-import Navbar from "../components/Navbar";
+
 
 
 const Home = () => {
@@ -109,7 +109,7 @@ const Home = () => {
 
     return (
         <div className="full-height">
-            <Navbar />
+           
             <br />
             <Head>
                 <title>Embedded PDF Document</title>

@@ -1,7 +1,6 @@
-
 import "./globals.css";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
-
+import AuthLayout from "./AuthLayout"; // Import the client-only wrapper
 
 export const metadata = {
   title: "Sharity",
@@ -11,11 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
+      <body>
         <UserProvider>
-          <body>{children}</body>
+          <AuthLayout>{children}</AuthLayout>
         </UserProvider>
- 
+      </body>
     </html>
   );
 }
