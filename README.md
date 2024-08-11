@@ -13,8 +13,8 @@ Sharity is a web-based platform designed to support charities by acting as a cen
 - Future Enhancements: Blockchain technology will soon be implemented to provide an immutable record of donations and resource sharing, ensuring transparency and trust.
 
 ## Tech Stack
-**Next.js**: A React-based framework used for building the front-end of the application.
-**Google Maps API**: Integrated to visualize the locations of charities and the distribution of resources.
-**MongoDB**: The database used to store information about charities, resources, and donations.
-**Auth0**: Provides secure authentication and authorization services.
-**Blockchain** (Upcoming): Will be used to create a transparent and immutable ledger for tracking donations and resource exchanges.
+**Next.js**: A React-based framework used for building the front-end of the application.__
+**Google Maps API**: Integrated to visualize the locations of charities and the distribution of resources.__
+**MongoDB**: The database used to store information about charities, resources, and donations.__
+**Auth0**: Provides secure authentication and authorization services.__
+**Blockchain** (Upcoming): Will be used to create a transparent and immutable ledger for tracking donations and resource exchanges.__
