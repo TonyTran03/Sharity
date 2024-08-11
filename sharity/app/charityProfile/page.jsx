@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import '../globals.css';
-import Navbar from "../components/Navbar";
 import React, { useState } from 'react';
 import 'daisyui/dist/full.css';
 
@@ -63,7 +62,7 @@ export function InventoryIndicator({s1,s2}) {
 export default function CharityProfile() {
     return (
         <div>
-            <Navbar/>
+        
             <div className="full-height">
                 <div className="dashboard">
 

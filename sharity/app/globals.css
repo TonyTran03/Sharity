@@ -78,15 +78,6 @@ input[type="range"].range-primary::-webkit-slider-thumb {
   background: black; 
 }
 
-.navbar {
-  background-color: #CF7D7D;
-  color: white;
-  padding: 10px 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .rectangle {
   width: 500px;
@@ -211,41 +202,6 @@ h1 {
   align-items: center;
   justify-content: center;
   display: flex;
-}
-
-
-.navbar-button-container{
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-  padding: 20px;
-}
-
-.navbar-button {
-  background-color: #EF83AD;
-  width: 200px;
-  height: 50px;
-  min-height: 40px;
-  border-radius: 10px;
-  margin: 20px;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.1s;
-  border: none;
-  cursor: pointer;
-}
-
-.navbar-button:hover {
-  background-color: #f0a6c6;
-}
-
-.navbar-button-full {
-  width: 80%;
-  max-width: 600px;
 }
 
 .relative {

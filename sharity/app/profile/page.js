@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import '../globals.css';
-import Navbar from "../components/Navbar";
+
 import { useUser } from '@auth0/nextjs-auth0/client'
 import UserName from "@/components/UserName";
 import NewEntry from "@/components/NewEntry";
@@ -20,11 +20,6 @@ function Rectangle() {
   );
 };
 
-function Button() {
-  return (
-    <button className="navbar-button" style={{fontSize: '1rem', fontWeight: 'bold'}}>Receipt</button>
-  )
-}
 
 // need to pass in objects
 export function Info({s1, s2, s3}) {
@@ -46,8 +41,7 @@ function Profile() {
   return (
     <div className = "full-height">
 
-      
-      <Navbar/>
+
      
       <div className="dashboard">
     
@@ -61,18 +55,13 @@ function Profile() {
         <Info s1="July 1, 2024" s2 = "Salvation Army" s3="$100.00"/>
       </div>
 
-      <div className="dashboard">
-        <Button/>
-      </div>
+
       
 
       <div>
         <Info s1="Aug 1, 2024" s2 = "Canadian Red Cross" s3="1 kg canned food"/>
       </div>
 
-      <div className="dashboard">
-        <Button/>
-      </div>
 
       </div>
       </div>

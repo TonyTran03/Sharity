@@ -15,10 +15,6 @@ function SharityLogo() {
 }
 function Dashboard() {
 
-  const handleClick = () => {
-      
-
-  }
 
   const { user, error, loading } = useUser();
   const router = useRouter();

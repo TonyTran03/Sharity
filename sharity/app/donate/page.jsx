@@ -3,7 +3,7 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from 'react';
 import UserName from "../components/UserName.js";
-import Navbar from "@/components/Navbar.jsx";
+
 import TextField from '@mui/material/TextField';
 import GetType from "@/components/GetType.jsx";
 import { useUser } from '@auth0/nextjs-auth0/client';
@@ -33,7 +33,6 @@ export default function DonationBox() {
       },
     },
   };
-
 
   const clothesOptions = ["Shirt", "Hat", "Pants", "Shoes", "Jacket"];
   const furnitureOptions = ["Table", "Chair", "Sofa", "Bed", "Cabinet"];
@@ -91,7 +90,7 @@ export default function DonationBox() {
   return (
 
     <Box >
-      <Navbar />
+
       <h1 style={{ 
         all: 'unset', 
         display: 'block', 
