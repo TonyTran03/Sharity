@@ -4,7 +4,6 @@ import { Box, Typography, TextField, Button, FormControl, InputLabel, Select, Me
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import Navbar from "@/components/Navbar.jsx";
 import GetType from "@/components/GetType.jsx";
 import GetCharity from "@/components/GetCharity.jsx";
 import NewEntry from "../components/NewEntry.jsx";
@@ -72,7 +71,6 @@ export default function DonationBox() {
 
     
     <div>
-      <Navbar />
       
       <Box
         sx={{
