@@ -19,6 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@googlemaps/js-api-loader": "^1.16.8",
+    "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.6",
     "maps": "^0.3.3",
     "mongodb": "^6.8.0",
