@@ -24,20 +24,21 @@ export default function GetCharity({ selectedCharity,onChange}) {
 
     return(
     <FormControl 
-    sx={{ marginRight: 2, width: '30ch' }} 
+    sx={{ width: '50ch', flex:1 }}  
     >
         <InputLabel id="demo-simple-select-label"></InputLabel>
         <Autocomplete
         freeSolo
         options={charities.map((charity) => charity.name)} // Extract the charity names for options
         value={selectedCharity}
-        
+        fullWidth 
         onChange={(event, newValue) => onChange(newValue)} // Pass the selected value directly
         renderInput={(params) => (
           <TextField
             {...params}
             label="Charity"
             variant="outlined"
+
           />
         )}
       />

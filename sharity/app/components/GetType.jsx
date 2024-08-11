@@ -25,7 +25,7 @@ export default function GetType({ onChange }) {
   }, []); 
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 130 }}>
+    <FormControl fullWidth sx={{ mb: 1, minWidth: 120 }}>
       <InputLabel id="type-select-label">Type</InputLabel>
       <Select
         labelId="type-select-label"
@@ -33,6 +33,7 @@ export default function GetType({ onChange }) {
         value={type}
         label="Type"
         onChange={handleChange}
+        
       >
         <MenuItem value="Clothing">Clothing</MenuItem>
         <MenuItem value="Furniture">Furniture</MenuItem>
