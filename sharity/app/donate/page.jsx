@@ -1,28 +1,15 @@
 'use client'
-
-import { Box, Typography } from "@mui/material";
-import { useState } from 'react';
-import UserName from "../components/UserName.js";
-
-import TextField from '@mui/material/TextField';
-import GetType from "@/components/GetType.jsx";
-import { useUser } from '@auth0/nextjs-auth0/client';
-import Select from '@mui/material/Select';
-import GetCharity from "@/components/GetCharity.jsx";
+import React from 'react';
+import { Box, Typography, TextField, Button, FormControl, InputLabel, Select, MenuItem, Checkbox, ListItemText, OutlinedInput } from "@mui/material";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import MenuItem from '@mui/material/MenuItem';
-import Checkbox from '@mui/material/Checkbox';
-import ListItemText from '@mui/material/ListItemText';
-import Grid from '@mui/material/Grid';
-
+import { useState } from 'react';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import Navbar from "@/components/Navbar.jsx";
+import GetType from "@/components/GetType.jsx";
+import GetCharity from "@/components/GetCharity.jsx";
 import NewEntry from "../components/NewEntry.jsx";
-export default function DonationBox() {
 
+export default function DonationBox() {
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
   const MenuProps = {
@@ -39,85 +26,72 @@ export default function DonationBox() {
   const items = [
     { name: "Adidas NMD R1 OG", price: "$ 349.00" },
     { name: "LV Porte-Documents Jour", price: "$ 1,650.00" },
-    { name: "Another Item", price: "$ 199.00" },{ name: "Another Item", price: "$ 199.00" }
-    // Add more items as needed
+    { name: "Another Item", price: "$ 199.00" },
+    { name: "Another Item", price: "$ 199.00" }
   ];
-  const [selectedType, setSelectedType] = useState('Clothing'); // Initialize with 'clothing'
-  function handleTypeChange (type){
-    setSelectedType(type);
-  };
 
-  const [selectedCharity, setSelectedCharity ] = useState(''); 
-  function handleCharityChange(charity){ 
-    setSelectedCharity(charity); 
-  };
-
-
+  const [selectedType, setSelectedType] = useState('Clothing');
+  const [selectedCharity, setSelectedCharity] = useState('');
   const [article, setArticle] = useState([]);
-  function handleArticleChange (event){
-    const {
-      target: { value },
-    } = event;
-    setArticle(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
-
   const [furniture, setFurniture] = useState([]);
-  function handleFurnitureChange (event){
+  const [submit, setSubmit] = useState(false);
+  
+  const { user } = useUser();  
+  if (!user) {
+    return <Typography variant="h6" align="center">Loading...</Typography>;
+  }
+
+  function handleTypeChange(type) {
+    setSelectedType(type);
+  }
+
+  function handleCharityChange(charity) { 
+    setSelectedCharity(charity); 
+  }
+
+  function handleArticleChange(event) {
     const {
       target: { value },
     } = event;
-    setFurniture(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
+    setArticle(typeof value === 'string' ? value.split(',') : value);
+  }
 
+  function handleFurnitureChange(event) {
+    const {
+      target: { value },
+    } = event;
+    setFurniture(typeof value === 'string' ? value.split(',') : value);
+  }
 
-  const [submit, setSubmit] = useState(false);
-  function handleSubmit(event){
+  function handleSubmit(event) {
     event.preventDefault();
     setSubmit(true); // Open the popup on submit
   }
 
-
-  const {user} = useUser();  
-  if (!user) {
-    return <Typography variant="h6" align="center">Loading...</Typography>;
-  }
   return (
 
-    <Box >
-
-      <h1 style={{ 
-        all: 'unset', 
-        display: 'block', 
-        fontSize: '2em', 
-        marginBlockStart: '0.67em', 
-        marginBlockEnd: '0.67em', 
-        fontWeight: 'bold', 
-        margin: '1em'
-      }}>
-        Donate today
-        
-      </h1>
+    
+    <div>
+      <Navbar />
       
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'left',
+          alignItems: 'flex-start',
           margin: '25px 25px 0',
+          width: '50%', // This sets the width of the form area to half the screen
         }}
       >
+      
+        <Typography variant="h4" component="h1" sx={{ mb: 3 }}>
+          Donate today
+        </Typography>
         
-        <GetType onChange={handleTypeChange} />
+        <GetType onChange={handleTypeChange} sx={{ width: '100%', mb: 2 }} />
 
-        <Box sx={{ display: 'flex', flexDirection: 'row', mt: 1.5 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', gap: 2 }}>
           <TextField
-          
             id="filled-read-only-input"
             label="Name"
             defaultValue={user.name}
@@ -125,15 +99,15 @@ export default function DonationBox() {
               readOnly: true,
             }}
             variant="filled"
-            sx={{ marginRight: 2, width: '30ch'  }} 
+            sx={{ flex: 1 }} 
           />
 
-            
-            <GetCharity selectedCharity={selectedCharity} onChange={handleCharityChange}/>
-            
+          <GetCharity selectedCharity={selectedCharity} onChange={handleCharityChange}  sx={{ flex: 1 }} />
+        </Box>
 
-            {selectedType === "Clothing" ? (
-              <FormControl fullWidth>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', mt: 2 }}>
+          {selectedType === "Clothing" ? (
+            <FormControl fullWidth>
               <InputLabel id="demo-multiple-checkbox-label">Clothes</InputLabel>
               <Select
                 labelId="demo-multiple-checkbox-label"
@@ -153,54 +127,50 @@ export default function DonationBox() {
                 ))}
               </Select>
             </FormControl>
-
           ) : selectedType === "Money" ? (
             <TextField
-            type="search"
+              type="search"
               fullWidth
               id="outlined-helperText"
               label="Enter an Amount"
             />
           ) : (
-            //furniture
             <FormControl fullWidth>
-            <InputLabel id="demo-multiple-checkbox-label">Furniture</InputLabel>
-            <Select
-              labelId="demo-multiple-checkbox-label"
-              id="demo-multiple-checkbox"
-              multiple
-              value={furniture}
-              onChange={handleFurnitureChange}
-              input={<OutlinedInput label="Furniture" />}
-              renderValue={(selected) => selected.join(', ')}
-              MenuProps={MenuProps}
-            >
-              {furnitureOptions.map((furnitureOptions) => (
-                <MenuItem key={furnitureOptions} value={furnitureOptions}>
-                  <Checkbox checked={furniture.indexOf(furnitureOptions) > -1} />
-                  <ListItemText primary={furnitureOptions} />
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+              <InputLabel id="demo-multiple-checkbox-label">Furniture</InputLabel>
+              <Select
+                labelId="demo-multiple-checkbox-label"
+                id="demo-multiple-checkbox"
+                multiple
+                value={furniture}
+                onChange={handleFurnitureChange}
+                input={<OutlinedInput label="Furniture" />}
+                renderValue={(selected) => selected.join(', ')}
+                MenuProps={MenuProps}
+              >
+
+                
+                {furnitureOptions.map((furnitureOptions) => (
+                  <MenuItem key={furnitureOptions} value={furnitureOptions}>
+                    <Checkbox checked={furniture.indexOf(furnitureOptions) > -1} />
+                    <ListItemText primary={furnitureOptions} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           )}
-          <Button
-            sx={{ ml: 1 }}
-            variant="contained"
-            endIcon={<AddCircleOutlineIcon />}
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
         </Box>
 
-
-
-        
+        <Button
+          sx={{ mt: 3, alignSelf: 'flex-start' }}
+          variant="contained"
+          endIcon={<AddCircleOutlineIcon />}
+          onClick={handleSubmit}
+        >
+          Submit
+        </Button>
       </Box>
 
-      <NewEntry open={submit} onClose={() => setSubmit(false)} items={items} /> 
-    </Box>
-
+      <NewEntry open={submit} onClose={() => setSubmit(false)} items={items} />
+    </div>
   );
 }
