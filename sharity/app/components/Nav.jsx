@@ -43,7 +43,7 @@ export default function Nav(){
               <div className="w-10 rounded-full">
                 <img
                   alt="oops"
-                  src="sharity/public/salvation-army-logo.png" />
+                  src="/salvation-army-logo.png" />
               </div>
             </div>
             <ul

@@ -6,15 +6,19 @@ export default function LandingNav(){
 
   
     return(
-        <nav className="navbar w-full flex justify-between items-center glass ">
+        <nav className="navbar flex w-full justify-between items-center glass ">
             
-            <div className="flex-1"></div> {/* This will push the Sign In button to the right */}
-      
-      <div className="dropdown dropdown-end">
-        <a className="btn btn-primary btn-sm sm:btn-md md:btn-lg">
-          Sign In
-        </a>
-      </div>
+    
+          
+
+            <div clssName = "flex-1"></div>
+
+       
+          <a className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" href="/api/auth/login">
+                Sign In
+            </a>
+   
+
     </nav>
     );
 }

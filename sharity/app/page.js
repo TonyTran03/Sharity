@@ -50,13 +50,6 @@ function Home() {
   if (loading) return <h1>Loading...</h1>
   if (error) return <h1>{error.message}</h1>
 
- 
-
-
-
-
-  
-
   return (
     <Box sx={{
       display: 'flex',
@@ -106,7 +99,6 @@ function Home() {
 
 
         <BulletPointList />
-        <Button variant="contained" color="primary" sx={{ mt: 2 }}>Sign-in</Button>
       </Box>
     </Box>
   );
