@@ -7,6 +7,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import GetType from "@/components/GetType.jsx";
 import GetCharity from "@/components/GetCharity.jsx";
 import NewEntry from "../components/NewEntry.jsx";
+import CharityCarousel from '@/components/CharityCarousel.jsx';
 
 export default function DonationBox() {
   const ITEM_HEIGHT = 48;
@@ -169,6 +170,9 @@ export default function DonationBox() {
       </Box>
 
       <NewEntry open={submit} onClose={() => setSubmit(false)} items={items} />
+
+      <CharityCarousel/>
     </div>
+
   );
 }

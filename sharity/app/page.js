@@ -10,6 +10,7 @@ import {createContext, useContext, useState, useEffect} from 'react';
 import NewEntry from "./components/NewEntry";
 
 import { Box, Typography, Button } from "@mui/material";
+import CharityCarousel from "./components/CharityCarousel";
 
 
 function SharityLogo() {
@@ -51,12 +52,14 @@ function Home() {
   if (error) return <h1>{error.message}</h1>
 
   return (
+    <div>
+      
     <Box sx={{
       display: 'flex',
-      justifyContent: 'center', // Centers the Box horizontally
-      alignItems: 'center', // Centers the Box vertically (optional)
-      minHeight: '50vh', // Optional: Ensures the content is vertically centered on the full viewport height
-      padding: '20px', // Adds some padding around the content
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '50vh', 
+      padding: '20px', 
       }}>
 
       <Box sx={{ maxWidth: '100vw', textAlign: 'center' }}>
@@ -100,7 +103,11 @@ function Home() {
 
         <BulletPointList />
       </Box>
+      
+
     </Box>
+    <CharityCarousel/>
+    </div>
   );
 }
 
