@@ -11,11 +11,11 @@ export default function Nav(){
   
 
     return(
-        <nav className="navbar w-full bg-base-100 flex justify-between items-center">
+        <nav className="navbar w-full flex justify-between items-center glass ">
             
           <div className="flex items-center">
 
-              <a  href="/home" className="btn btn-ghost text-xl ">S H A R I T Y</a>
+              <a  href="/" className="btn btn-ghost text-xl ">S H A R I T Y</a>
           </div>
 
           <ul className="menu menu-horizontal flex items-center ">

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import "../globals.css";
-import MatchingButton from '../components/MatchingButton';
+
 
 
 
@@ -118,7 +118,7 @@ const Home = () => {
             
 
            
-            <MatchingButton link="/home">Got it!</MatchingButton>
+            <button link="/home">Got it!</button>
         </div>
     );
 };

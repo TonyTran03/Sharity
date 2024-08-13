@@ -1,5 +1,5 @@
 import "../globals.css";
-import MatchingButton from "./MatchingButton";
+
 
 function LoginPrompt() {
   return (
@@ -8,7 +8,7 @@ function LoginPrompt() {
 
       <br />
       <h1 style={{ fontSize: '2rem' }}>Sign up or log in to get started!</h1>
-      <MatchingButton link="/api/auth/login">Login</MatchingButton>
+      <button link="/api/auth/login">Login</button>
       </div>     
     </div>
   )
