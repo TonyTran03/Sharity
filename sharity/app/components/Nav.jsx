@@ -18,8 +18,8 @@ export default function Nav(){
               <a  href="/home" className="btn btn-ghost text-xl ">S H A R I T Y</a>
           </div>
 
-          <ul className="menu menu-horizontal flex items-center">
-            <li className="flex-none">
+          <ul className="menu menu-horizontal flex items-center ">
+            <li className="mr-2">
               <Link
                 className={isNavItemActive("/map", pathname) ? "active" : ""}
                 href="/map"
@@ -28,7 +28,7 @@ export default function Nav(){
               </Link>
             </li>
 
-            <li className="flex-none">
+            <li className="">
               <Link
                 className={isNavItemActive("/donate", pathname) ? "active" : ""}
                 href="/donate"

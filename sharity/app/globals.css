@@ -91,12 +91,6 @@ input[type="range"].range-primary::-webkit-slider-thumb {
 }
 
 
-.dashboard {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
 
 .side-by-side {
   display: flex;
@@ -149,19 +143,9 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(
-    to bottom left,
-    rgb(207, 125, 125),
-    rgb(250, 200, 200)
-  );
+
   background-attachment: fixed;
 }
-
-
-button {
-  font-size: 15px;
-}
-
 
 
 h1 {
