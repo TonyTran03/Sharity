@@ -13,9 +13,23 @@ body,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: rgb(255,238,250);
-  background: linear-gradient(180deg, rgba(255,238,250,1) 0%, rgba(255,241,251,1) 21%, rgba(255,255,255,1) 51%);
+  background: rgb(255,249,255);
+  background: linear-gradient(90deg, rgba(255,238,250,1) 0%, rgba(255,241,251,1) 50%, rgba(255,249,255,1) 100%);
+  background-size: 200% 200%; /* Ensures the gradient covers the area during the transition */
+  animation: gradientShift 20s ease infinite; /* Animation applied here */
 }
+@keyframes gradientShift {
+  0% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
 
 :root {
   --foreground-rgb: 0, 0, 0;

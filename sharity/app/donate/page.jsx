@@ -171,7 +171,7 @@ export default function DonationBox() {
 
       <NewEntry open={submit} onClose={() => setSubmit(false)} items={items} />
 
-      <CharityCarousel/>
+
     </div>
 
   );
