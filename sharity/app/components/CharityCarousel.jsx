@@ -9,6 +9,8 @@ const CharityCarousel = () => {
     '/logos/stc.png',
   ];
 
+
+  
   return (
     <div className="carousel-container">
       <div className="carousel-content">
@@ -23,8 +25,8 @@ const CharityCarousel = () => {
           overflow: hidden;
           position: relative;
           border-radius: 30px; 
-          background-color: rgb(254,248,255); 
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+          
         }
 
         .carousel-content {

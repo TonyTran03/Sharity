@@ -8,15 +8,15 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto; /* or remove this line to allow default scrolling behavior */
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   background: rgb(255,249,255);
-  background: linear-gradient(90deg, rgba(255,238,250,1) 0%, rgba(255,241,251,1) 50%, rgba(255,249,255,1) 100%);
+  background: linear-gradient(90deg, rgba(235,238,250,1) 0%, rgba(255,241,251,1) 50%, rgba(235,249,255,1) 100%);
   background-size: 200% 200%; /* Ensures the gradient covers the area during the transition */
-  animation: gradientShift 20s ease infinite; /* Animation applied here */
+  animation: gradientShift 12s ease infinite; /* Animation applied here */
 }
 @keyframes gradientShift {
   0% {
@@ -30,6 +30,14 @@ body,
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;

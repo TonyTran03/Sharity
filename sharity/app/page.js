@@ -43,7 +43,19 @@ export function BulletPointList() {
 
 
 function Home() {
-
+  <style jsx>{`
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 100% 0%;
+      }
+      50% {
+        background-position: 0% 100%;
+      }
+      100% {
+        background-position: 100% 0%;
+      }
+    }
+  `}</style>
 
   const { user, error, loading } = useUser();
   const router = useRouter();
@@ -60,6 +72,8 @@ function Home() {
       alignItems: 'center',
       minHeight: '50vh', 
       padding: '20px', 
+      flexDirection: 'column', // Allow content to stack vertically
+      
       }}>
 
       <Box sx={{ maxWidth: '100vw', textAlign: 'center' }}>
@@ -86,19 +100,7 @@ function Home() {
         </Typography>
 
 
-        <style jsx>{`
-          @keyframes gradientAnimation {
-            0% {
-              background-position: 100% 0%;
-            }
-            50% {
-              background-position: 0% 100%;
-            }
-            100% {
-              background-position: 100% 0%;
-            }
-          }
-`}</style>
+
 
 
         <BulletPointList />
@@ -107,6 +109,61 @@ function Home() {
 
     </Box>
     <CharityCarousel/>
+
+
+    <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'column',
+            width: '100%',
+            height: '100vh',
+            padding: '20px',
+            background: 'linear-gradient(90deg, rgba(235,238,250,1) 0%, rgba(255,241,251,1) 50%, rgba(235,249,255,1) 100%)', // Add background if needed
+            
+           
+          }}
+    >
+
+
+
+<Box sx={{ padding: '2rem', borderRadius: '8px', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',  background: 'linear-gradient(90deg, rgba(235,238,250,1) 0%, rgba(255,241,251,1) 50%, rgba(235,249,255,1) 100%)',  paddingTop:'5rem' }}>
+ 
+  <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'start', justifyContent: 'space-between', height:'100vh',}}>
+    
+    {/*Box for text*/}
+    <Box sx={{ 
+      width: { xs: '100%', md: '45%' }, 
+      animation: 'gradientAnimation 7s ease infinite', 
+      backgroundSize: '200% 200%',
+      background: 'linear-gradient(90deg, rgba(241,238,250,1) 0%, rgba(255,241,251,1) 50%, rgba(255,249,255,1) 100%)', 
+      padding: '2rem',
+      borderRadius: '8px', 
+     }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#333' }}>
+        Live Map
+      </Typography>
+      <Typography variant="h6" sx={{ marginTop: '1rem', color: '#666' }}>
+        Make the search easier by using 'Donation Map'
+      </Typography>
+      <Typography variant="body1" sx={{ marginTop: '1rem', color: '#666' }}>
+        View charities that are in demand for supplies
+      </Typography>
+    </Box>
+    {/* Map Section */}
+    <Box sx={{ width: { xs: '100%', md: '45%' }, backgroundColor: '#fff', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)'  }}>
+      <img src="/mapPhoto.png" alt="Map" style={{ width: '100%', height: 'auto' }} />
+    </Box>
+  </Box>
+</Box>
+
+
+
+
+
+
+
+    </Box>
     </div>
   );
 }
