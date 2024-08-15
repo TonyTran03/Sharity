@@ -70,109 +70,124 @@ export default function DonationBox() {
 
   return (
 
-    
-    <div>
+  <Box sx={{ display: 'flex', justifyContent: 'space-between', padding: '25px' }}>
+    {/* Left Section */}
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        width: '48%',
+        marginRight: '2%', // Add some space between the sections
+      }}
+    >
+      <Typography variant="h4" component="h1" sx={{ mb: 3 }}>
+        Donate today
+      </Typography>
       
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          margin: '25px 25px 0',
-          width: '50%', // This sets the width of the form area to half the screen
-        }}
-      >
-      
-        <Typography variant="h4" component="h1" sx={{ mb: 3 }}>
-          Donate today
-        </Typography>
-        
-        <GetType onChange={handleTypeChange} sx={{ width: '100%', mb: 2 }} />
+      <GetType onChange={handleTypeChange} sx={{ width: '100%', mb: 2 }} />
 
-        <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', gap: 2 }}>
-          <TextField
-            id="filled-read-only-input"
-            label="Name"
-            defaultValue={user.name}
-            InputProps={{
-              readOnly: true,
-            }}
-            variant="filled"
-            sx={{ flex: 1 }} 
-          />
-
-          <GetCharity selectedCharity={selectedCharity} onChange={handleCharityChange}  sx={{ flex: 1 }} />
-        </Box>
-
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', mt: 2 }}>
-          {selectedType === "Clothing" ? (
-            <FormControl fullWidth>
-              <InputLabel id="demo-multiple-checkbox-label">Clothes</InputLabel>
-              <Select
-                labelId="demo-multiple-checkbox-label"
-                id="demo-multiple-checkbox"
-                multiple
-                value={article}
-                onChange={handleArticleChange}
-                input={<OutlinedInput label="Clothes" />}
-                renderValue={(selected) => selected.join(', ')}
-                MenuProps={MenuProps}
-              >
-                {clothesOptions.map((clothesOptions) => (
-                  <MenuItem key={clothesOptions} value={clothesOptions}>
-                    <Checkbox checked={article.indexOf(clothesOptions) > -1} />
-                    <ListItemText primary={clothesOptions} />
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          ) : selectedType === "Money" ? (
-            <TextField
-              type="search"
-              fullWidth
-              id="outlined-helperText"
-              label="Enter an Amount"
-            />
-          ) : (
-            <FormControl fullWidth>
-              <InputLabel id="demo-multiple-checkbox-label">Furniture</InputLabel>
-              <Select
-                labelId="demo-multiple-checkbox-label"
-                id="demo-multiple-checkbox"
-                multiple
-                value={furniture}
-                onChange={handleFurnitureChange}
-                input={<OutlinedInput label="Furniture" />}
-                renderValue={(selected) => selected.join(', ')}
-                MenuProps={MenuProps}
-              >
-
-                
-                {furnitureOptions.map((furnitureOptions) => (
-                  <MenuItem key={furnitureOptions} value={furnitureOptions}>
-                    <Checkbox checked={furniture.indexOf(furnitureOptions) > -1} />
-                    <ListItemText primary={furnitureOptions} />
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          )}
-        </Box>
-
-        <Button
-          sx={{ mt: 3, alignSelf: 'flex-start' }}
-          variant="contained"
-          endIcon={<AddCircleOutlineIcon />}
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>
+      <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', gap: 2 }}>
+        <TextField
+          id="filled-read-only-input"
+          label="Name"
+          defaultValue={user.name}
+          InputProps={{
+            readOnly: true,
+          }}
+          variant="filled"
+          sx={{ flex: 1 }} 
+        />
+        <GetCharity selectedCharity={selectedCharity} onChange={handleCharityChange} sx={{ flex: 1 }} />
       </Box>
 
-      <NewEntry open={submit} onClose={() => setSubmit(false)} items={items} />
+      <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', mt: 2 }}>
+        {selectedType === "Clothing" ? (
+          <FormControl fullWidth>
+            <InputLabel id="demo-multiple-checkbox-label">Clothes</InputLabel>
+            <Select
+              labelId="demo-multiple-checkbox-label"
+              id="demo-multiple-checkbox"
+              multiple
+              value={article}
+              onChange={handleArticleChange}
+              input={<OutlinedInput label="Clothes" />}
+              renderValue={(selected) => selected.join(', ')}
+              MenuProps={MenuProps}
+            >
+              {clothesOptions.map((clothesOptions) => (
+                <MenuItem key={clothesOptions} value={clothesOptions}>
+                  <Checkbox checked={article.indexOf(clothesOptions) > -1} />
+                  <ListItemText primary={clothesOptions} />
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        ) : selectedType === "Money" ? (
+          <TextField
+            type="search"
+            fullWidth
+            id="outlined-helperText"
+            label="Enter an Amount"
+          />
+        ) : (
+          <FormControl fullWidth>
+            <InputLabel id="demo-multiple-checkbox-label">Furniture</InputLabel>
+            <Select
+              labelId="demo-multiple-checkbox-label"
+              id="demo-multiple-checkbox"
+              multiple
+              value={furniture}
+              onChange={handleFurnitureChange}
+              input={<OutlinedInput label="Furniture" />}
+              renderValue={(selected) => selected.join(', ')}
+              MenuProps={MenuProps}
+            >
+              {furnitureOptions.map((furnitureOptions) => (
+                <MenuItem key={furnitureOptions} value={furnitureOptions}>
+                  <Checkbox checked={furniture.indexOf(furnitureOptions) > -1} />
+                  <ListItemText primary={furnitureOptions} />
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      </Box>
+
+      <Button
+        sx={{ mt: 3, alignSelf: 'flex-start' }}
+        variant="contained"
+        endIcon={<AddCircleOutlineIcon />}
+        onClick={handleSubmit}
+      >
+        Submit
+      </Button>
+    </Box>
+
+    {/* Right Section */}
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        width: '48%',
+      }}
+    >
+
+      <Typography variant="h4" component="h2" sx={{ mb: 3 }}>
+        Collection
+      </Typography>
+      <p>Content for the right section can go here. You can include images, text, forms, or any other elements.</p>
+    </Box>
+
+    <NewEntry open={submit} onClose={() => setSubmit(false)} items={items} />
+  </Box>
 
 
-    </div>
+
+     
+
+
 
   );
 }

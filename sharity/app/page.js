@@ -126,9 +126,11 @@ function Home() {
     >
 
 
-
+ {/*Box for entire page below banner*/}
 <Box sx={{ padding: '2rem', borderRadius: '8px', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',  background: 'linear-gradient(90deg, rgba(235,238,250,1) 0%, rgba(255,241,251,1) 50%, rgba(235,249,255,1) 100%)',  paddingTop:'5rem' }}>
  
+
+ {/*Box for Map section*/}
   <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'start', justifyContent: { xs: '', md: 'space-between' }, height:'100vh',}}>
     
     {/*Box for text*/}

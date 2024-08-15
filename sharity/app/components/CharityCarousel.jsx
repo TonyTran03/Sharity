@@ -2,7 +2,7 @@ import React from 'react';
 
 const CharityCarousel = () => {
   const charityLogos = [
-    '/sharity.png',
+    '/logos/sharity.png',
     '/logos/bhf.png',
     '/logos/pngtree-hand-shake-social-charity-logo-png-image_5888875.png',
     '/logos/ray-of-hope.png',
